@@ -5,13 +5,9 @@ using UnityEngine;
 public class DefaultFire : MonoBehaviour, IFireBehavior
 {
     public GameObject bullet;
-    public int bulletForce = 5000;
-    public float defaultFireRate = 5;
-
-    [SerializeField]
-    private float currentFireRate;
-
-    private float nextTimeToFire = 0;
+    public int bulletForce = 50;
+    public float defaultFireRate = 10;
+    private float currentFireRate, nextTimeToFire = 0;
 
     private void Start()
     {
@@ -20,7 +16,7 @@ public class DefaultFire : MonoBehaviour, IFireBehavior
 
     
 
-    public void Fire(Transform parent)
+    public void Fire()
     {
         if (Time.time < nextTimeToFire)
             return;
