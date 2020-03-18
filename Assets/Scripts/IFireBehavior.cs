@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IFireBehavior
 {
-    void Fire();
+    void Fire(Transform gunPosition);
 }

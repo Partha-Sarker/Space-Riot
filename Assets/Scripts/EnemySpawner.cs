@@ -10,6 +10,7 @@ public class EnemySpawner : MonoBehaviour
     private void Start()
     {
         enemySpawner = spawnMode.GetComponent<DefaultEnemySpawn>();
+        //enemySpawner = spawnMode.GetComponent<NoEnemySpawning>();
         enemySpawner.Spawn(target);
     }
 }

@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpaceShipMovement : MonoBehaviour
+public class SpaceShipController : MonoBehaviour
 {
     private Rigidbody2D rb;
     Vector2 mouse_pos, object_pos, velocity;
     public float angle, xInput, yInput, speed = 1;
-    public Transform fireModes;
-    IFireBehavior fireBehavior;
+    public Transform fireModes, gun;
+    public IFireBehavior fireBehavior;
 
     // Start is called before the first frame update
     void Start()
@@ -29,9 +29,10 @@ public class SpaceShipMovement : MonoBehaviour
 
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetButton("Fire1"))
         {
-            fireBehavior.Fire();
+            print(Random.Range(0, 1000));
+            fireBehavior.Fire(gun);
         }
     }
 
