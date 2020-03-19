@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe572154c9032054dbc43a700776ad7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 9060256779965040809, guid: a8e47c5b72e18774185c7114c9bf0459, type: 3}
+  bullet: {fileID: 605116799076496505, guid: 6dd332b905ddd9c40b3dfd2bdf2e7929, type: 3}
   bulletForce: 50
   defaultFireRate: 10
 --- !u!114 &5083939986976429847
@@ -59,6 +59,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f398ac443f7f7fd449823627801a785a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyBullet: {fileID: 0}
+  enemyBullet: {fileID: 8501153205943662058, guid: 2b657ec1a7a09924ebd0622180f3a86c,
+    type: 3}
   bulletForce: 35
   defaultFireRate: 1

@@ -293,6 +293,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gun: {fileID: 1929026244631457762}
   fireMode: {fileID: 5085274280558088872}
+  blastParticle: {fileID: 8785708051816075022, guid: ebe2bdb0b44e84141b80cd7b59dd90c2,
+    type: 3}
+  currentHealth: 0
 --- !u!1001 &7755155950185670717
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -360,12 +363,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5083939986976429847, guid: 77ef280de6cd1e845a8fff66e0999c7c,
-        type: 3}
-      propertyPath: enemyBullet
-      value: 
-      objectReference: {fileID: 9060256779965040809, guid: d8126e740b10cc742903a7fa965831d2,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77ef280de6cd1e845a8fff66e0999c7c, type: 3}
 --- !u!4 &5085274280558088872 stripped

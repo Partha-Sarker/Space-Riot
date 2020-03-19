@@ -2,19 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpaceShipController : MonoBehaviour
+public class SpaceShipController : MonoBehaviour, IDamagable
 {
     private Rigidbody2D rb;
     Vector2 mouse_pos, object_pos, velocity;
     public float angle, xInput, yInput, speed = 1;
     public Transform fireModes, gun;
     public IFireBehavior fireBehavior;
+    public GameObject blastEffect;
+
+    public int maxHealth = 500;
+    public int currentHealth;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         fireBehavior = fireModes.GetComponent<DefaultFire>();
+        currentHealth = maxHealth;
     }
 
     // Update is called once per frame
@@ -31,7 +36,6 @@ public class SpaceShipController : MonoBehaviour
 
         if (Input.GetButton("Fire1"))
         {
-            print(Random.Range(0, 1000));
             fireBehavior.Fire(gun);
         }
     }
@@ -43,5 +47,19 @@ public class SpaceShipController : MonoBehaviour
         velocity.x = xInput;
         velocity.y = yInput;
         rb.velocity = velocity * speed;
+    }
+
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        if (currentHealth <= 0)
+            SelfDestruct();
+    }
+
+    private void SelfDestruct()
+    {
+        GameObject blast = Instantiate(blastEffect, transform.position, Quaternion.identity);
+        Destroy(blastEffect, 2);
+        Destroy(gameObject);
     }
 }
