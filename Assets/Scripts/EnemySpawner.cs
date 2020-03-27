@@ -4,13 +4,21 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    ISpawningBehavior enemySpawner;
+    ISpawningBehavior enemySpawnerMode;
     public Transform spawnMode, target;
 
     private void Start()
     {
-        enemySpawner = spawnMode.GetComponent<DefaultEnemySpawn>();
-        //enemySpawner = spawnMode.GetComponent<NoEnemySpawning>();
-        enemySpawner.Spawn(target);
+        enemySpawnerMode = spawnMode.GetComponent<DefaultEnemySpawn>();
+    }
+
+    public void SetNoSpawnMode()
+    {
+        enemySpawnerMode = spawnMode.GetComponent<NoEnemySpawning>();
+    }
+
+    private void Update()
+    {
+        enemySpawnerMode.Spawn(target);
     }
 }

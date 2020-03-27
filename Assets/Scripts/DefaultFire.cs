@@ -1,10 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Cinemachine;
 using UnityEngine;
 
 public class DefaultFire : MonoBehaviour, IFireBehavior
 {
     public GameObject bullet;
+    private CinemachineImpulseSource cinemachineImpulse;
     public int bulletForce = 50;
     public float defaultFireRate = 10;
     private float currentFireRate, nextTimeToFire = 0;
@@ -12,6 +12,7 @@ public class DefaultFire : MonoBehaviour, IFireBehavior
     private void Start()
     {
         currentFireRate = defaultFireRate;
+        cinemachineImpulse = GetComponentInParent<CinemachineImpulseSource>();
     }
 
     

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class SpaceShipController : MonoBehaviour, IDamagable
 {
@@ -10,6 +8,8 @@ public class SpaceShipController : MonoBehaviour, IDamagable
     public Transform fireModes, gun;
     public IFireBehavior fireBehavior;
     public GameObject blastEffect;
+    public EnemySpawner enemySpawner;
+    public ButtonManager buttonManager;
 
     public int maxHealth = 500;
     public int currentHealth;
@@ -59,7 +59,8 @@ public class SpaceShipController : MonoBehaviour, IDamagable
     private void SelfDestruct()
     {
         GameObject blast = Instantiate(blastEffect, transform.position, Quaternion.identity);
-        Destroy(blastEffect, 2);
-        Destroy(gameObject);
+        Destroy(blast, 2);
+        enemySpawner.SetNoSpawnMode();
+        buttonManager.ActiveRetryButton();
     }
 }

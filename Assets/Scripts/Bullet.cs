@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class Bullet : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class Bullet : MonoBehaviour
         try
         {
             collision.GetComponent<IDamagable>().TakeDamage(30);
+            Destroy(gameObject);
         }
         catch (Exception)
         {
