@@ -359,7 +359,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ChannelMask: 1
   m_Gain: 1
-  m_Use2DDistance: 0
+  m_Use2DDistance: 1
 --- !u!1001 &84653150
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -579,101 +579,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8efb16f2430582e49bfb78dffdff0f92, type: 3}
---- !u!1 &125703905 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1929026245892855143, guid: f605cc0087600264795a2e63f5642d08,
-    type: 3}
-  m_PrefabInstance: {fileID: 1929026244522256857}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &125703910
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 125703905}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd438dd108a0f284aa931a2da434f1d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ImpulseDefinition:
-    m_ImpulseChannel: 1
-    m_RawSignal: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
-    m_AmplitudeGain: 5
-    m_FrequencyGain: 3
-    m_RepeatMode: 0
-    m_Randomize: 1
-    m_TimeEnvelope:
-      m_AttackShape:
-        serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      m_DecayShape:
-        serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      m_AttackTime: 0
-      m_SustainTime: 0.2
-      m_DecayTime: 0.7
-      m_ScaleWithImpact: 1
-      m_HoldForever: 0
-    m_ImpactRadius: 100
-    m_DirectionMode: 0
-    m_DissipationMode: 2
-    m_DissipationDistance: 1000
-  m_LayerMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IgnoreTag: 
-  m_UseImpactDirection: 0
-  m_ScaleImpactWithMass: 0
-  m_ScaleImpactWithSpeed: 0
---- !u!114 &125703911
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 125703905}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 180ecf9b41d478f468eb3e9083753217, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ImpulseDefinition:
-    m_ImpulseChannel: 1
-    m_RawSignal: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
-    m_AmplitudeGain: 3
-    m_FrequencyGain: 2
-    m_RepeatMode: 0
-    m_Randomize: 1
-    m_TimeEnvelope:
-      m_AttackShape:
-        serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      m_DecayShape:
-        serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      m_AttackTime: 0
-      m_SustainTime: 0.2
-      m_DecayTime: 0.7
-      m_ScaleWithImpact: 1
-      m_HoldForever: 0
-    m_ImpactRadius: 100
-    m_DirectionMode: 0
-    m_DissipationMode: 2
-    m_DissipationDistance: 1000
 --- !u!4 &128318757 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8299002290608515238, guid: 8efb16f2430582e49bfb78dffdff0f92,
@@ -7712,10 +7617,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1929026244631457762, guid: f605cc0087600264795a2e63f5642d08,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 3.97
+    - target: {fileID: 125703910, guid: f605cc0087600264795a2e63f5642d08, type: 3}
+      propertyPath: m_ImpulseDefinition.m_AmplitudeGain
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 125703910, guid: f605cc0087600264795a2e63f5642d08, type: 3}
+      propertyPath: m_ImpulseDefinition.m_TimeEnvelope.m_SustainTime
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 125703910, guid: f605cc0087600264795a2e63f5642d08, type: 3}
+      propertyPath: m_ImpulseDefinition.m_TimeEnvelope.m_DecayTime
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 1929026245892855065, guid: f605cc0087600264795a2e63f5642d08,
         type: 3}
@@ -7772,27 +7684,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1929026245892855066, guid: f605cc0087600264795a2e63f5642d08,
-        type: 3}
-      propertyPath: m_CollisionDetection
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1929026245892855066, guid: f605cc0087600264795a2e63f5642d08,
-        type: 3}
-      propertyPath: m_LinearDrag
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 1929026245892855066, guid: f605cc0087600264795a2e63f5642d08,
-        type: 3}
-      propertyPath: m_AngularDrag
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 1929026245892855067, guid: f605cc0087600264795a2e63f5642d08,
-        type: 3}
-      propertyPath: blastEffect
-      value: 
-      objectReference: {fileID: 8785708051816075022, guid: d6ef2fa36b16e954bb8a580ecd2f47a2,
-        type: 3}
     - target: {fileID: 1929026245892855067, guid: f605cc0087600264795a2e63f5642d08,
         type: 3}
       propertyPath: enemySpawner

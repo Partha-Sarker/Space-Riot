@@ -7,6 +7,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1005349332591887392, guid: a8e47c5b72e18774185c7114c9bf0459,
+        type: 3}
+      propertyPath: initialDamage
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2751064203456613245, guid: a8e47c5b72e18774185c7114c9bf0459,
         type: 3}
       propertyPath: m_Color.r
@@ -100,7 +105,7 @@ PrefabInstance:
     - target: {fileID: 9060256779965040809, guid: a8e47c5b72e18774185c7114c9bf0459,
         type: 3}
       propertyPath: m_Name
-      value: bullet
+      value: enemy basic bullet
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8e47c5b72e18774185c7114c9bf0459, type: 3}

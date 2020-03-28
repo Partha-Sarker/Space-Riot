@@ -6,11 +6,19 @@ using Cinemachine;
 
 public class Bullet : MonoBehaviour
 {
+    public int initialDamage = 30;
+    public int currentDamage;
+
+    private void Start()
+    {
+        currentDamage = initialDamage;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         try
         {
-            collision.GetComponent<IDamagable>().TakeDamage(30);
+            collision.GetComponent<IDamagable>().TakeDamage(currentDamage);
             Destroy(gameObject);
         }
         catch (Exception)

@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Cinemachine;
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour, IDamagable
@@ -8,6 +7,7 @@ public class EnemyController : MonoBehaviour, IDamagable
     public Transform gun;
     public Transform fireMode;
     public GameObject blastParticle;
+    private CinemachineImpulseSource impulse;
 
     private int maxHealth = 100;
     public int currentHealth;
@@ -16,14 +16,19 @@ public class EnemyController : MonoBehaviour, IDamagable
     {
         fireBehavior = fireMode.GetComponent<EnemyBasicFire>();
         currentHealth = maxHealth;
+        impulse = GetComponent<CinemachineImpulseSource>();
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.CompareTag("bullet"))
+            impulse.GenerateImpulse();
     }
 
     // Update is called once per frame
     void Update()
     {
         fireBehavior.Fire(gun);
-        if (Input.GetKeyDown(KeyCode.F))
-            TakeDamage(120);
     }
 
     public void TakeDamage(int damage)
