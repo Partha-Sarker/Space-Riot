@@ -114,8 +114,9 @@ GameObject:
   - component: {fileID: 1929026245892855066}
   - component: {fileID: 1929026245892855142}
   - component: {fileID: 1929026245892855064}
-  - component: {fileID: 1929026245892855067}
+  - component: {fileID: 6014542230530475830}
   - component: {fileID: 125703910}
+  - component: {fileID: 1929026245892855067}
   m_Layer: 0
   m_Name: SPACE SHIP
   m_TagString: Untagged
@@ -201,7 +202,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d3c337d95ef635944b8e2b8e4af1a5ed, type: 3}
-  m_Color: {r: 0.23921567, g: 0.83137256, b: 0.61620843, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.638, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -280,7 +281,7 @@ PolygonCollider2D:
       - {x: 2.32, y: -1.9}
       - {x: 2.34, y: -1.88}
       - {x: 2.34, y: -1.8499999}
---- !u!114 &1929026245892855067
+--- !u!114 &6014542230530475830
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -289,21 +290,38 @@ MonoBehaviour:
   m_GameObject: {fileID: 1929026245892855143}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d29014dafedfe0c4481c94d896fa6c04, type: 3}
+  m_Script: {fileID: 11500000, guid: 180ecf9b41d478f468eb3e9083753217, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  angle: 0
-  xInput: 0
-  yInput: 0
-  speed: 20
-  fireModes: {fileID: 5085274280558088872}
-  gun: {fileID: 1929026244631457762}
-  blastEffect: {fileID: 8785708051816075022, guid: d6ef2fa36b16e954bb8a580ecd2f47a2,
-    type: 3}
-  enemySpawner: {fileID: 0}
-  buttonManager: {fileID: 0}
-  maxHealth: 500
-  currentHealth: 0
+  m_ImpulseDefinition:
+    m_ImpulseChannel: 1
+    m_RawSignal: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+    m_AmplitudeGain: 25
+    m_FrequencyGain: 10
+    m_RepeatMode: 0
+    m_Randomize: 1
+    m_TimeEnvelope:
+      m_AttackShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_DecayShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_AttackTime: 0
+      m_SustainTime: 0.05
+      m_DecayTime: 0.5
+      m_ScaleWithImpact: 1
+      m_HoldForever: 0
+    m_ImpactRadius: 100
+    m_DirectionMode: 0
+    m_DissipationMode: 2
+    m_DissipationDistance: 1000
 --- !u!114 &125703910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -319,7 +337,7 @@ MonoBehaviour:
   m_ImpulseDefinition:
     m_ImpulseChannel: 1
     m_RawSignal: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
-    m_AmplitudeGain: 5
+    m_AmplitudeGain: 20
     m_FrequencyGain: 8
     m_RepeatMode: 0
     m_Randomize: 1
@@ -337,8 +355,8 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       m_AttackTime: 0
-      m_SustainTime: 0.15
-      m_DecayTime: 0.5
+      m_SustainTime: 0.3
+      m_DecayTime: 0.7
       m_ScaleWithImpact: 1
       m_HoldForever: 0
     m_ImpactRadius: 100
@@ -349,9 +367,36 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IgnoreTag: 
-  m_UseImpactDirection: 0
+  m_UseImpactDirection: 1
   m_ScaleImpactWithMass: 0
   m_ScaleImpactWithSpeed: 0
+--- !u!114 &1929026245892855067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1929026245892855143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d29014dafedfe0c4481c94d896fa6c04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 20
+  dashSpeed: 80
+  dashTime: 0.3
+  dashEndTime: 0
+  dashCoolDownTime: 1
+  dashCoolDownEndTime: 0
+  fireModes: {fileID: 5085274280558088872}
+  gun: {fileID: 1929026244631457762}
+  blastEffect: {fileID: 8785708051816075022, guid: d6ef2fa36b16e954bb8a580ecd2f47a2,
+    type: 3}
+  enemySpawner: {fileID: 0}
+  buttonManager: {fileID: 0}
+  impulse: {fileID: 6014542230530475830}
+  maxHealth: 500
+  currentHealth: 0
 --- !u!1001 &7755155950185670717
 PrefabInstance:
   m_ObjectHideFlags: 0

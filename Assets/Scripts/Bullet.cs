@@ -8,6 +8,7 @@ public class Bullet : MonoBehaviour
 {
     public int initialDamage = 30;
     public int currentDamage;
+    public GameObject bulletBlast;
 
     private void Start()
     {
@@ -19,6 +20,7 @@ public class Bullet : MonoBehaviour
         try
         {
             collision.GetComponent<IDamagable>().TakeDamage(currentDamage);
+            Destroy(Instantiate(bulletBlast, transform.position, transform.rotation), 1);
             Destroy(gameObject);
         }
         catch (Exception)

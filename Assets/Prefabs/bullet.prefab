@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: -1005349332591887392}
   m_Layer: 0
   m_Name: bullet
-  m_TagString: Untagged
+  m_TagString: bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -208,3 +208,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialDamage: 30
   currentDamage: 0
+  bulletBlast: {fileID: 6125311272770591986, guid: 13b1949a731106c4c8c0d7e2656c02ab,
+    type: 3}

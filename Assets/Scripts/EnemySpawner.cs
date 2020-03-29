@@ -9,6 +9,12 @@ public class EnemySpawner : MonoBehaviour
 
     private void Start()
     {
+        SetNoSpawnMode();
+        Invoke("SetDefaultSpawnMode", 1);
+    }
+
+    public void SetDefaultSpawnMode()
+    {
         enemySpawnerMode = spawnMode.GetComponent<DefaultEnemySpawn>();
     }
 

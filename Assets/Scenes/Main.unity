@@ -4020,11 +4020,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ad980451443d70438faac0bc6c235a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_LookaheadTime: 0.1
+  m_LookaheadTime: 0
   m_LookaheadSmoothing: 10
   m_LookaheadIgnoreY: 0
-  m_XDamping: 10
-  m_YDamping: 10
+  m_XDamping: 2
+  m_YDamping: 2
   m_ZDamping: 1
   m_ScreenX: 0.5
   m_ScreenY: 0.5
@@ -7617,18 +7617,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 125703910, guid: f605cc0087600264795a2e63f5642d08, type: 3}
-      propertyPath: m_ImpulseDefinition.m_AmplitudeGain
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 125703910, guid: f605cc0087600264795a2e63f5642d08, type: 3}
-      propertyPath: m_ImpulseDefinition.m_TimeEnvelope.m_SustainTime
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 125703910, guid: f605cc0087600264795a2e63f5642d08, type: 3}
-      propertyPath: m_ImpulseDefinition.m_TimeEnvelope.m_DecayTime
-      value: 0.7
-      objectReference: {fileID: 0}
     - target: {fileID: 1929026245892855065, guid: f605cc0087600264795a2e63f5642d08,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7698,6 +7686,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SPACE SHIP
+      objectReference: {fileID: 0}
+    - target: {fileID: 1929026245892855143, guid: f605cc0087600264795a2e63f5642d08,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f605cc0087600264795a2e63f5642d08, type: 3}
